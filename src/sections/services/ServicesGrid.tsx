@@ -1,10 +1,5 @@
 // src/sections/services/ServicesGrid.tsx
-// Full services section — 3-column grid of service cards
-
-import { SERVICES, SERVICES_META } from "@/data/antara";
-import SectionHeader from "@/components/ui/SectionHeader";
-import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
-import ServiceCard from "./ServiceCard";
+// Full services section — cleared, content removed
 
 export default function ServicesGrid() {
   return (
@@ -23,25 +18,8 @@ export default function ServicesGrid() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ── Section Header ─────────────────────────────────────────────── */}
-        <SectionHeader
-          eyebrow={SERVICES_META.subheading}
-          heading={SERVICES_META.heading}
-          subtext={SERVICES_META.description}
-          align="center"
-          className="mb-14"
-        />
-
-        {/* ── Services Grid ──────────────────────────────────────────────── */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((service) => (
-            <StaggerItem key={service.id} className="flex">
-              <div className="w-full">
-                <ServiceCard service={service} />
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        {/* Empty space - services content removed */}
+        <div className="min-h-[400px]"></div>
       </div>
     </section>
   );
