@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: "Audience",   href: "/#audience", scroll: true },
   { label: "Ecosystem",  href: "/#ecosystem", scroll: true },
   { label: "Values",     href: "/#values", scroll: true },
+  { label: "Roadmap",    href: "/#roadmap", scroll: true },
   { label: "Works",      href: "/works", scroll: false },
   { label: "Blogs",      href: "/blogs", scroll: false },
   { label: "Careers",    href: "/careers", scroll: false },

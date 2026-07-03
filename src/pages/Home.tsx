@@ -64,6 +64,9 @@ export default function Home() {
       
       {/* Core Values Section */}
       <ComingSoonSection id="values" heading="Core Values" />
+      
+      {/* Positioning & Roadmap Section */}
+      <ComingSoonSection id="roadmap" heading="Positioning & Roadmap" />
     </PageWrapper>
   );
 }
