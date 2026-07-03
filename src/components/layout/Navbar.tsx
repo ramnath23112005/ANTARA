@@ -1,27 +1,28 @@
 // src/components/layout/Navbar.tsx
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { isPastThreshold } from "@/lib/smoothScroll";
 
 const NAV_LINKS = [
-  { label: "Home",       href: "/" },
-  { label: "About",      href: "/about" },
-  { label: "Services",   href: "/services" },
-  { label: "Audience",   href: "/audience" },
-  { label: "Ecosystem",  href: "/ecosystem" },
-  { label: "Values",     href: "/values" },
-  { label: "Works",      href: "/works" },
-  { label: "Blogs",      href: "/blogs" },
-  { label: "Careers",    href: "/careers" },
-  { label: "Contact",    href: "/contact" },
+  { label: "Home",       href: "/", scroll: false },
+  { label: "About",      href: "/about", scroll: false },
+  { label: "Services",   href: "/#services", scroll: true },
+  { label: "Audience",   href: "/#audience", scroll: true },
+  { label: "Ecosystem",  href: "/#ecosystem", scroll: true },
+  { label: "Values",     href: "/#values", scroll: true },
+  { label: "Works",      href: "/works", scroll: false },
+  { label: "Blogs",      href: "/blogs", scroll: false },
+  { label: "Careers",    href: "/careers", scroll: false },
+  { label: "Contact",    href: "/contact", scroll: false },
 ] as const;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(isPastThreshold(60));
@@ -31,6 +32,46 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
+
+  // Scroll to section if hash is present
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, scroll: boolean) => {
+    if (scroll) {
+      e.preventDefault();
+      const [path, sectionId] = href.split('#');
+      
+      if (pathname !== path) {
+        // Navigate to home first, then scroll
+        navigate(href);
+      } else {
+        // Already on home, just scroll
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      setMenuOpen(false);
+    }
+  };
+
+  const isActive = (href: string, scroll: boolean) => {
+    if (scroll) {
+      const sectionId = href.split('#')[1];
+      return pathname === '/' && hash === `#${sectionId}`;
+    }
+    return pathname === href;
+  };
 
   return (
     <header
@@ -52,13 +93,14 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-6">
-          {NAV_LINKS.map(({ label, href }) => (
+          {NAV_LINKS.map(({ label, href, scroll }) => (
             <li key={href}>
               <Link
                 to={href}
+                onClick={(e) => handleNavClick(e, href, scroll)}
                 className={cn(
                   "text-sm font-medium transition-colors duration-200",
-                  pathname === href
+                  isActive(href, scroll)
                     ? "text-antara-gold"
                     : "text-antara-muted hover:text-antara-text"
                 )}
@@ -93,13 +135,14 @@ export default function Navbar() {
       {menuOpen && (
         <div className="lg:hidden bg-antara-dark border-t border-antara-border px-4 pb-6">
           <ul className="flex flex-col gap-1 mt-4">
-            {NAV_LINKS.map(({ label, href }) => (
+            {NAV_LINKS.map(({ label, href, scroll }) => (
               <li key={href}>
                 <Link
                   to={href}
+                  onClick={(e) => handleNavClick(e, href, scroll)}
                   className={cn(
                     "block py-2 text-sm font-medium transition-colors",
-                    pathname === href ? "text-antara-gold" : "text-antara-muted hover:text-antara-text"
+                    isActive(href, scroll) ? "text-antara-gold" : "text-antara-muted hover:text-antara-text"
                   )}
                 >
                   {label}
