@@ -3,6 +3,7 @@
 import PageWrapper from "@/components/layout/PageWrapper";
 import HeroAnimated from "@/sections/hero/HeroAnimated";
 import ServicesGrid from "@/sections/services/ServicesGrid";
+import ComparisonSection from "@/sections/comparison/ComparisonSection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 // Reusable Coming Soon Section Component
@@ -48,8 +49,8 @@ export default function Home() {
       {/* Ecosystem Model Section */}
       <ComingSoonSection id="ecosystem" heading="Ecosystem Model" />
       
-      {/* How Antara is Different Section */}
-      <ComingSoonSection id="difference" heading="How Antara is Different" />
+      {/* What Makes Antara Global Different Section */}
+      <ComparisonSection />
       
       {/* Core Values Section */}
       <ComingSoonSection id="values" heading="Core Values" />
