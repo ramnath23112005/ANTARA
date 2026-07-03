@@ -1,34 +1,46 @@
 // src/pages/Values.tsx
 // Developer: (unassigned — pages 26-30)
 import PageWrapper from "@/components/layout/PageWrapper";
-import ValuesGrid from "@/sections/values/ValuesGrid";
-import CoreCenter from "@/sections/values/CoreCenter";
-import CTASection from "@/sections/common/CTASection";
-import SectionWrapper from "@/sections/common/SectionWrapper";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { VALUES_BRAND_STATEMENT, VALUES_CTA } from "@/data/antara";
 
 export default function Values() {
   return (
     <PageWrapper>
-      <ValuesGrid />
-      <CoreCenter />
+      <section
+        id="values"
+        className="relative bg-antara-navy overflow-hidden"
+        aria-label="Core Values"
+      >
+        {/* Gradient divider - top */}
+        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(130, 40, 200, 0.4), rgba(201, 163, 65, 0.18), transparent)', marginBottom: '0px' }}></div>
 
-      {/* Brand Statement */}
-      <SectionWrapper dark>
-        <SectionHeader
-          heading={VALUES_BRAND_STATEMENT.heading}
-          subtext={VALUES_BRAND_STATEMENT.text}
-        />
-      </SectionWrapper>
+        <div className="py-20 lg:py-28">
+          {/* Subtle background accent */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+          >
+            <div className="absolute top-1/3 left-0 w-72 h-72 bg-antara-gold/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
+          </div>
 
-      <CTASection
-        heading={VALUES_CTA.heading}
-        primaryLabel={VALUES_CTA.cta.primary.label}
-        primaryHref={VALUES_CTA.cta.primary.href}
-        secondaryLabel={VALUES_CTA.cta.secondary.label}
-        secondaryHref={VALUES_CTA.cta.secondary.href}
-      />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Core Values - Coming Soon */}
+            <SectionHeader
+              heading="Core Values"
+              subtext="Coming Soon"
+              align="center"
+              className="mb-14"
+            />
+            
+            {/* Blank space */}
+            <div className="min-h-[300px]"></div>
+          </div>
+        </div>
+
+        {/* Gradient divider - bottom */}
+        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(130, 40, 200, 0.4), rgba(201, 163, 65, 0.18), transparent)', marginBottom: '0px' }}></div>
+      </section>
     </PageWrapper>
   );
 }
