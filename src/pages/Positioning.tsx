@@ -1,31 +1,37 @@
 // src/pages/Positioning.tsx
-// Positioning & Roadmap — COMING SOON
-// Content reserved — do not add content here yet.
+// Positioning & Roadmap — Lokesh's work integrated
 import PageWrapper from "@/components/layout/PageWrapper";
-import { POSITIONING_COMING_SOON } from "@/data/antara";
-import { Clock } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import HeroSection from "@/components/positioning/HeroSection";
+import WhoWeAre from "@/components/positioning/WhoWeAre";
+import VisionMission from "@/components/positioning/VisionMission";
+import PhilosophySection from "@/components/positioning/PhilosophySection";
+import GrowthFramework from "@/components/positioning/GrowthFramework";
+import ServicesSection from "@/components/positioning/ServicesSection";
+import FutureRoadmap from "@/components/positioning/FutureRoadmap";
+import ResourcesSection from "@/components/positioning/ResourcesSection";
+import BrandClosingCTA from "@/components/positioning/BrandClosingCTA";
+import ContactSection from "@/components/positioning/ContactSection";
 
 export default function Positioning() {
   return (
-    <PageWrapper>
-      <section className="min-h-[80vh] flex flex-col items-center justify-center px-4 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-antara-surface border border-antara-border mb-8">
-          <Clock size={14} className="text-antara-gold" />
-          <span className="text-antara-muted text-sm">In Progress</span>
-        </div>
+    <PageWrapper noTopPad>
+      {/* Gradient divider - top */}
+      <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(130, 40, 200, 0.4), rgba(201, 163, 65, 0.18), transparent)' }}></div>
 
-        <h1 className="text-4xl sm:text-6xl font-bold text-antara-white mb-4">
-          {POSITIONING_COMING_SOON.title}
-        </h1>
+      <HeroSection />
+      <WhoWeAre />
+      <VisionMission />
+      <PhilosophySection />
+      <GrowthFramework />
+      <ServicesSection />
+      <FutureRoadmap />
+      <ResourcesSection />
+      <BrandClosingCTA />
+      <ContactSection />
 
-        <p className="text-6xl sm:text-8xl font-black text-gradient-gold my-6">
-          {POSITIONING_COMING_SOON.message}
-        </p>
-
-        <p className="text-antara-muted text-lg max-w-md">
-          {POSITIONING_COMING_SOON.subtext}
-        </p>
-      </section>
+      {/* Gradient divider - bottom */}
+      <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(130, 40, 200, 0.4), rgba(201, 163, 65, 0.18), transparent)' }}></div>
     </PageWrapper>
   );
 }

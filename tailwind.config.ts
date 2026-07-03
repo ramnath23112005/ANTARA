@@ -28,6 +28,19 @@ const config: Config = {
         startup:  { DEFAULT: "#6366F1", light: "#818CF8" },
         msme:     { DEFAULT: "#10B981", light: "#34D399" },
         emerging: { DEFAULT: "#F59E0B", light: "#FCD34D" },
+        // Lokesh positioning color tokens
+        "deep-navy":       "#0F1E36",
+        "deep-navy-light": "#1E3A8A",
+        "deep-navy-dark":  "#0A1324",
+        "emerald":         "#0D9488",
+        "emerald-light":   "#14B8A6",
+        "emerald-dark":    "#0F766E",
+        "gold":            "#B88A2B",
+        "gold-light":      "#CEA041",
+        "gold-dark":       "#8C6A1D",
+        "light-gray":      "#F8FAFC",
+        "border-gray":     "#E2E8F0",
+        "medium-gray":     "#475569",
       },
       fontFamily: {
         sans:    ["Inter", "system-ui", "sans-serif"],
@@ -53,9 +66,11 @@ const config: Config = {
         "fade-in":     "fadeIn 0.6s ease-out",
         "slide-up":    "slideUp 0.6s ease-out",
         "slide-down":  "slideDown 0.6s ease-out",
-        "float":       "float 3s ease-in-out infinite",
+        "float":       "float 6s ease-in-out infinite",
         "pulse-slow":  "pulse 4s ease-in-out infinite",
         "spin-slow":   "spin 8s linear infinite",
+        "pulse-glow":  "pulseGlow 3s ease-in-out infinite",
+        "float-slow":  "floatSlow 8s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -72,7 +87,16 @@ const config: Config = {
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%":      { transform: "translateY(-10px)" },
+          "50%":      { transform: "translateY(-20px)" },
+        },
+        pulseGlow: {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%":      { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "33%":      { transform: "translateY(-10px) rotate(1deg)" },
+          "66%":      { transform: "translateY(5px) rotate(-1deg)" },
         },
       },
       backdropBlur: {
