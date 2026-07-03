@@ -1,6 +1,8 @@
 // src/sections/services/ServicesGrid.tsx
 // Full services section — cleared, content removed
 
+import SectionHeader from "@/components/ui/SectionHeader";
+
 export default function ServicesGrid() {
   return (
     <section
@@ -18,8 +20,16 @@ export default function ServicesGrid() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Empty space - services content removed */}
-        <div className="min-h-[400px]"></div>
+        {/* Our Services - Coming Soon */}
+        <SectionHeader
+          heading="Our Services"
+          subtext="Coming Soon"
+          align="center"
+          className="mb-14"
+        />
+        
+        {/* Blank space */}
+        <div className="min-h-[300px]"></div>
       </div>
     </section>
   );
