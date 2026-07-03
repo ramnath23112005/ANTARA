@@ -15,7 +15,7 @@ const config: Config = {
           dark:    "#F9FAFB",  // light gray section bg
           surface: "#FFFFFF",  // white card bg
           border:  "#E5E7EB",  // light borders / dividers
-          gold:    "#C9A84C",  // premium gold accent
+          gold:    "#1A606C",  // teal accent (was gold)
           amber:   "#F59E0B",  // warm accent
           blue:    "#3B82F6",  // link / cta
           cyan:    "#06B6D4",  // ecosystem / tech accent
@@ -39,13 +39,13 @@ const config: Config = {
         "gradient-conic":        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-gradient":         "linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 50%, #F3F4F6 100%)",
         "card-gradient":         "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.8) 100%)",
-        "gold-gradient":         "linear-gradient(135deg, #C9A84C 0%, #F59E0B 100%)",
+        "gold-gradient":         "linear-gradient(135deg, #1A606C 0%, #F59E0B 100%)",
         "blue-gradient":         "linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)",
         "green-gradient":        "linear-gradient(135deg, #10B981 0%, #0D9488 100%)",
       },
       boxShadow: {
         "glass":   "0 4px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.06)",
-        "gold":    "0 0 24px rgba(201,168,76,0.25), 0 4px 16px rgba(0,0,0,0.3)",
+        "gold":    "0 0 24px rgba(26,96,108,0.25), 0 4px 16px rgba(0,0,0,0.3)",
         "glow-blue": "0 0 32px rgba(59,130,246,0.3)",
         "glow-teal": "0 0 32px rgba(13,148,136,0.3)",
       },
