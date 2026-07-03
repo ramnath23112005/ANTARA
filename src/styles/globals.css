@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --scrollbar-bg: #0A0E1A;
-    --scrollbar-thumb: #2A3550;
+    --scrollbar-bg: #F1F5F9;
+    --scrollbar-thumb: #CBD5E1;
     --scrollbar-thumb-hover: #C9A84C;
   }
 
@@ -33,14 +33,14 @@
   /* Selection colour */
   ::selection {
     background: rgba(201, 168, 76, 0.3);
-    color: #F8FAFC;
+    color: #111827;
   }
 }
 
 @layer components {
   /* Glass morphism card */
   .glass {
-    @apply bg-antara-surface/80 backdrop-blur-md border border-antara-border rounded-2xl;
+    @apply bg-white/80 backdrop-blur-md border border-antara-border rounded-2xl;
   }
 
   /* Gold gradient text */

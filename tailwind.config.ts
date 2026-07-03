@@ -11,18 +11,18 @@ const config: Config = {
       colors: {
         // Antara Global Brand Colors
         antara: {
-          navy:    "#0A0E1A",  // deep navy - primary bg
-          dark:    "#111827",  // section bg
-          surface: "#1A2235",  // card bg
-          border:  "#2A3550",  // borders / dividers
+          navy:    "#FFFFFF",  // white - primary bg
+          dark:    "#F9FAFB",  // light gray section bg
+          surface: "#FFFFFF",  // white card bg
+          border:  "#E5E7EB",  // light borders / dividers
           gold:    "#C9A84C",  // premium gold accent
           amber:   "#F59E0B",  // warm accent
           blue:    "#3B82F6",  // link / cta
           cyan:    "#06B6D4",  // ecosystem / tech accent
           teal:    "#0D9488",  // growth accent
-          muted:   "#8892A4",  // secondary text
-          text:    "#E2E8F0",  // primary text
-          white:   "#F8FAFC",  // headings
+          muted:   "#6B7280",  // secondary text (darker for white bg)
+          text:    "#111827",  // dark primary text
+          white:   "#000000",  // dark headings
         },
         // Audience category colors
         startup:  { DEFAULT: "#6366F1", light: "#818CF8" },
@@ -37,8 +37,8 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial":       "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-gradient":         "linear-gradient(135deg, #0A0E1A 0%, #111827 50%, #0A1628 100%)",
-        "card-gradient":         "linear-gradient(135deg, rgba(26,34,53,0.9) 0%, rgba(10,14,26,0.8) 100%)",
+        "hero-gradient":         "linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 50%, #F3F4F6 100%)",
+        "card-gradient":         "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.8) 100%)",
         "gold-gradient":         "linear-gradient(135deg, #C9A84C 0%, #F59E0B 100%)",
         "blue-gradient":         "linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)",
         "green-gradient":        "linear-gradient(135deg, #10B981 0%, #0D9488 100%)",
